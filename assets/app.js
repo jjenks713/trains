@@ -15,7 +15,7 @@
         // add var for moment.js
         var firstTime = $("#first-time").val().trim();
         var randomFormat = "MM/DD/YYYY";
-        var convertDate = moment(dateInput, randomFormat);
+        var convertTime = moment(firstTime, randomFormat);
 
         //   on click button to submit val to firebase
                 $("#submit").on("click", function () {
@@ -26,7 +26,7 @@
 
                 // collect and calculate moment.js info
                     
-                    var monthsWorked = convertDate.fromNow();
+                    var nextArrival = convertTime.fromNow();
                     var moneysPaid = monthsWorked * monthlyRate;
         
                     console.log("anything");
@@ -60,20 +60,53 @@
               
             });  
 
-            var randomDate = "02/23/1999";
-            var randomFormat = "MM/DD/YYYY";
-            var convertDate = moment(randomDate, randomFormat);
-        
-            // Using scripts from moment.js write code below to complete each of the following.
-            // Console.log to confirm the code changes we made worked.
-            console.log(convertDate.format('MMMM Do YYYY, h:mm:ss a'));
-            console.log(convertDate.format('dddd'));
-            console.log(convertDate.format('x'));
-            console.log(convertDate.format('MM/DD/YYYY'));
-        
-            // 1 ...to convert the randomDate into three other date formats
-            // 2 ...to determine the time in years, months, days between today and the randomDate
-            console.log(convertDate.fromNow());
-            console.log(convertDate.diff(moment(), "years"));
-            console.log(convertDate.diff(moment(), "months"));
-            console.log(convertDate.diff(moment(), "days"));
+            // for reference
+        // (TEST)
+    // First Train of the Day is 3:00 AM
+    // Assume Train comes every 7 minutes.
+    // Assume the current time is 3:16 AM....
+    // What time would the next train be...? (Use your brain first)
+    // It would be 3:21 -- 5 minutes away
+    // ==========================================================
+    // Solved Mathematically
+    // Test case 2:
+    // 16 - 00 = 16
+    // 16 % 7 = 2 (Modulus is the remainder)
+    // 7 - 2 = 5 minutes away
+    // 5 + 3:16 = 3:21
+    // // Assumptions
+    // var tFrequency = 3;
+
+    // // Time is 3:30 AM
+
+    // var firstTime = "03:30";
+
+    // // First Time (pushed back 1 year to make sure it comes before current time)
+
+    // var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+    // console.log(firstTimeConverted);
+
+    // // Current Time
+
+    // var currentTime = moment();
+    // console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+    // // Difference between the times
+
+    // var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    // console.log("DIFFERENCE IN TIME: " + diffTime);
+
+    // // Time apart (remainder)
+
+    // var tRemainder = diffTime % tFrequency;
+    // console.log(tRemainder);
+
+    // // Minute Until Train
+
+    // var tMinutesTillTrain = tFrequency - tRemainder;
+    // console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+
+    // // Next Train
+    
+    // var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    // console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
