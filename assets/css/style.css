@@ -1,0 +1,23 @@
+body {
+ background-image: url("../photos/trains.jpg");
+ background-size: 100%;
+}
+.head {
+    font-family: 'Teko', sans-serif;
+    font-size: 175px;
+}
+.card {
+    font-family: 'VT323', monospace;
+}
+.card-body {
+    font-size: 25px;
+}
+form {
+    padding: 25px;
+}
+table {
+    padding: 25px;
+}
+.form-control {
+    opacity: .5;
+}

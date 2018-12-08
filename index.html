@@ -6,10 +6,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" style="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" style="text/css" href="assets/css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron|Teko|VT323" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
@@ -17,22 +19,21 @@
 
     <section class="container">
         <div class="jumbotron bg-dark">
-            <h1 class="display-3 text-center">Trains</h1>
+            <h1 class="text-center text-light head">Train Schedule</h1>
         </div>
         </div>
 
-        <div class="card">
-            <h4 class="card-header">Current Employees</h4>
+        <div class="card text-left bg-dark text-light">
+            <h2 class="card-header bg-dark text-light">Train Schedule</h2>
             <div class="card-body">
-                <h4 class="card-title"></h4>
                 <table class="table">
-                    <thead>
+                    <thead class="font-weight-bold card-title">
                         <tr>
-                            <th scope="col">Train Name</th>
-                            <th scope="col">Destination</th>
-                            <th scope="col">Frequency (Min)</th>
-                            <th scope="col">Next Arrival</th>
-                            <th scope="col">Minutes Away</th>
+                            <th scope="col"><h3>Train Name</h3></th>
+                            <th scope="col"><h3>Destination</h3></th>
+                            <th scope="col"><h3>Frequency (Min)</h3></th>
+                            <th scope="col"><h3>Next Arrival</h3></th>
+                            <th scope="col"><h3>Minutes Away</h3></th>
                         </tr>
                     </thead>
                     <tbody id="th-body">
@@ -42,32 +43,31 @@
             </div>
         </div>
         <br>
-        <br>
-        <br>
-        <div class="card text-left">
-            <h4 class="card-header">Add Train</h4>
+
+        <div class="card text-left bg-dark text-light">
+            <h2 class="card-header bg-dark text-light">Add Train</h2>
             <form class="card-body">
 
                 <form>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Train Name</label>
+                        <label for="exampleFormControlInput1"><h3>Train Name</h3></label>
                         <input type="text" class="form-control" id="train-name" placeholder="Midnight Express">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Destination</label>
+                        <label for="exampleFormControlSelect1"><h3>Destination</h3></label>
                         <input type="text" class="form-control" id="destination" placeholder="New York">
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect2">First Train Time</label>
+                        <label for="exampleFormControlSelect2"><h3>First Train Time</h3></label>
                         <input type="text" class="form-control" id="first-time" placeholder="(HH:mm - Military Time">
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Frequency</label>
+                        <label for="exampleFormControlTextarea1"><h3>Frequency</h3></label>
                         <input type="text" class="form-control" id="frequency" placeholder="Min">
                     </div>
-                    <button type="submit" id="submit" class="text-right">Submit</button>
+                    <button type="submit" id="submit" class="text-right btn btn-light">Submit</button>
                 </form>
             </form>
         </div>
@@ -83,7 +83,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-    <script src="assets/app.js"></script>
+    <script src="assets/js/app.js"></script>
 
 
 
