@@ -13,9 +13,9 @@
           var database = firebase.database();
 
         // add var for moment.js
-        var firstTime = $("#first-time").val().trim();
-        var randomFormat = "MM/DD/YYYY";
-        var convertTime = moment(firstTime, randomFormat);
+        // var firstTime = $("#first-time").val().trim();
+        // var randomFormat = "MM/DD/YYYY";
+        // var convertTime = moment(firstTime, randomFormat);
 
         //   on click button to submit val to firebase
                 $("#submit").on("click", function () {
@@ -26,8 +26,8 @@
 
                 // collect and calculate moment.js info
                     
-                    var nextArrival = convertTime.fromNow();
-                    var moneysPaid = monthsWorked * monthlyRate;
+                    // var nextArrival = convertTime.fromNow();
+                    // var moneysPaid = firstTime * monthlyRate;
         
                     console.log("anything");
                 // push data to Firebase

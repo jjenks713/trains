@@ -3,11 +3,19 @@ body {
  background-size: 100%;
 }
 .head {
+    margin-top: 10px;
+    padding: 25px;
     font-family: 'Teko', sans-serif;
     font-size: 175px;
+    background-color: rgba(18, 18, 87, 0.835);
 }
 .card {
     font-family: 'VT323', monospace;
+    background-color: rgba(18, 18, 87, 0.835);
+}
+.card-header {
+    font-size: 45px;
+    font-family: 'Teko', sans-serif;
 }
 .card-body {
     font-size: 25px;
@@ -20,4 +28,31 @@ table {
 }
 .form-control {
     opacity: .5;
+}
+
+
+@media screen and (max-width: 790px) {
+    .div-size {
+        background-size: 100%;
+    } 
+}
+@media screen and (max-width: 540px) {
+    .div-size {
+        background-size: 100%;
+    } 
+}
+@media screen and (max-width: 440px) {
+    .div-size {
+        background-size: 100%;
+    } 
+}
+@media screen and (max-width: 340px) {
+    .div-size {
+        background-size: 100%;
+    } 
+}
+@media screen and (max-width: 240px) {
+    .div-size {
+        background-size: 100%;
+    } 
 }
