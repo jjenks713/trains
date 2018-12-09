@@ -32,27 +32,28 @@ table {
 
 
 @media screen and (max-width: 790px) {
-    .div-size {
+    .card {
         background-size: 100%;
     } 
 }
 @media screen and (max-width: 540px) {
-    .div-size {
+    .card {
         background-size: 100%;
     } 
 }
 @media screen and (max-width: 440px) {
-    .div-size {
+    .card {
         background-size: 100%;
+        background-color: green;
     } 
 }
 @media screen and (max-width: 340px) {
-    .div-size {
+    .card {
         background-size: 100%;
     } 
 }
 @media screen and (max-width: 240px) {
-    .div-size {
+    .card {
         background-size: 100%;
     } 
 }
