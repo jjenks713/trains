@@ -25,13 +25,6 @@
                 var firstTime = $("#first-time").val().trim();
                 console.log(firstTime);
 
-              var randomObject = {
-                name: name,
-                destination: destination,
-                tFrequency: tFrequency,
-              };
-              database.ref().push(randomObject);
-
               // collect and calculate moment.js info
               var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
               console.log(firstTimeConverted);
@@ -52,23 +45,23 @@
               // Minute Until Train
               var tMinutesTillTrain = tFrequency - tRemainder;
               console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
-          
+              alert(tMinutesTillTrain);
               // Next Train
               var nextTrain = moment().add(tMinutesTillTrain, "minutes");
               console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
-
+             
               
 
               // }
       
               // push data to Firebase
-                //   database.ref().push({
-                //   name: name,
-                //   destination: destination,
-                //   frequency: tFrequency,
-                //   nextTrain: nextTrain,
-                //   minutesTill: tMinutesTillTrain
-                // });
+                  database.ref().push({
+                  name: name,
+                  destination: destination,
+                  tFrequency: tFrequency,
+                  nextTrain: nextTrain.format("hh:mm"),
+                  minutesTill: tMinutesTillTrain
+                });
               
                 alert("New Train Added");
 
@@ -84,18 +77,23 @@
               $("#train-name").text(childSnapshot.val().name);
               $("#destination").text(childSnapshot.val().destination);
               $("#first-time").text(childSnapshot.val().firstTime);
-              $("#frequency").text(childSnapshot.val().frequency);
+              $("#frequency").text(childSnapshot.val().tFrequency);
               // var nextTrain = childSnapshot.val().nextTrain;
               $("<div>").text(childSnapshot.val().nextTrain);
               $("<div>").text(childSnapshot.val().minutesTill);
 
+              var newName = childSnapshot.val().name
+              var newDestination = childSnapshot.val().destination
+              var newFrequency = childSnapshot.val().tFrequency
+              var newNextTrain = childSnapshot.val().nextTrain
+              var newMinutesTill = childSnapshot.val().minutesTill
 
             // push data to HTML
-              $("#th-body").append("<tr><td>" + childSnapshot.val().name + "</td>" +
-              "<td>" + childSnapshot.val().destination + "</td>" +
-              "<td>" + childSnapshot.val().frequency + " Minutes</td>" +
-              "<td>" + childSnapshot.val().nextTrain + "</td>" +
-              "<td>" + childSnapshot.val().minutesTill + " Minutes</td></tr>");
+              $("#th-body").append("<tr><td>" + newName + "</td>" +
+              "<td>" + newDestination + "</td>" +
+              "<td>" + newFrequency + " Minutes</td>" +
+              "<td>" + newNextTrain + "</td>" +
+              "<td>" + newMinutesTill + " Minutes</td></tr>");
               
             });  
 
