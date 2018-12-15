@@ -74,7 +74,7 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
   // collect data from Firebase
   $("#train-name").text(childSnapshot.val().name);
   $("#destination").text(childSnapshot.val().destination);
-  $("#first-time").text(childSnapshot.val().firstTime);
+  // $("#first-time").text(childSnapshot.val().firstTime);
   $("#frequency").text(childSnapshot.val().tFrequency);
   // var nextTrain = childSnapshot.val().nextTrain;
   $("<div>").text(childSnapshot.val().nextTrain);
